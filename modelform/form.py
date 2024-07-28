@@ -9,5 +9,5 @@ class RegisterForm(forms.ModelForm):
             'name' : forms.TextInput(attrs={'class':'form-control'}),
             'contact' : forms.TextInput(attrs={'class':'form-control'}),
             'address' : forms.TextInput(attrs={'class':'form-control'}),
-            'mail' : forms.TextInput(attrs={'class':'form-control'}),
+            'mail' : forms.TextInput(attrs={'class':'form-control'}), 
         }
