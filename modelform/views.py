@@ -1,5 +1,7 @@
 from django.shortcuts import render
+from modelform.form import RegisterForm
 
 def home(request):
-    return render(request, 'index.html')
+    myform = RegisterForm()                                 # here 'myform' is an object call 'RegisterForm' class
+    return render(request, 'index.html',{'forms':myform})
 # Create your views here.
