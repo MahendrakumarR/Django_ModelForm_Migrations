@@ -21,4 +21,5 @@ from modelform import views    # here import views from modelform application
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',views.home,name="home"),
+    path('addData/',views.addData,name="addData"),
 ]
