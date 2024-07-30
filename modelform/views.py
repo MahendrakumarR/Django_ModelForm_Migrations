@@ -13,7 +13,7 @@ def home(request):
     
 
 def addData(request):
-    if request.method == 'POST':
+    if request.method == 'POST': 
         myform = RegisterForm(request.POST)
         if myform.is_valid():
             myform.save()
