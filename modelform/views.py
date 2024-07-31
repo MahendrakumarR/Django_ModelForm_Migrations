@@ -3,8 +3,8 @@ from modelform.form import RegisterForm
 from modelform.models import Data
 from django.contrib import messages
 
-def home(request):
-    myform = RegisterForm()                                   # here 'myform' is an object call 'RegisterForm' class
+def home(request): 
+    myform = RegisterForm()                                 # here 'myform' is an object call 'RegisterForm' class
     mydata = Data.objects.all()
     if mydata !='':
         return render(request,"index.html",{'form':myform, 'datas':mydata})
@@ -19,5 +19,4 @@ def addData(request):
             myform.save()
             messages.success(request,"Record Added Successfully")
             return redirect('home')
-            
 # Create your views here.
