@@ -10,7 +10,7 @@ def home(request):
         return render(request,"index.html",{'form':myform, 'datas':mydata})
     else:
         return render(request,"index.html",{'form':myform})
-    
+         
 
 def addData(request):
     if request.method == 'POST': 
