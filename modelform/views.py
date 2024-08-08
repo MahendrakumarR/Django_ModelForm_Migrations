@@ -19,4 +19,16 @@ def addData(request):
             myform.save()
             messages.success(request,"Record Added Successfully")
             return redirect('home')
+
+def updateData(request,id):
+    mydata=Data.objects.get(id=id)
+    myform=RegisterForm(instance=mydata)
+    if request.method == 'POST':
+        myform=RegisterForm(request.POST,instance=mydata)
+        if myform.is_valid():
+            myform.save()
+            messages.success(request,"Record Updated Successfully...!!")
+            return redirect('Home')
+    context={'forms':myform}
+    return render(request,"update.html",context)
 # Create your views here.
