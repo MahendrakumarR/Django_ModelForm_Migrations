@@ -28,7 +28,13 @@ def updateData(request,id):
         if myform.is_valid():
             myform.save()
             messages.success(request,"Record Updated Successfully...!!")
-            return redirect('Home')
+            return redirect('home')
     context={'forms':myform}
     return render(request,"update.html",context)
+
+def deleteData(request,id):
+    mydata=Data.objects.get(id=id)
+    mydata.delete()
+    messages.success(request,"Record Deleted Successfully...!!")
+    return redirect('home')
 # Create your views here.
